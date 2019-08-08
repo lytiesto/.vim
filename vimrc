@@ -36,7 +36,7 @@ map <F5> :call RunPython()<CR>
 func! RunPython()
   exec "W"
   if &filetype == 'python'
-    exec "!time python2.7 %"
+    exec "!time python3 %"
   endif
 endfunc
 
@@ -51,6 +51,12 @@ map sl :set splitright<CR>:vsplit<CR>
 map sj :set nosplitright<CR>:vsplit<CR> 
 map si :set nosplitbelow<CR>:split<CR> 
 map sk :set splitbelow<CR>:split<CR> 
+
+"跳行
+noremap H 5h
+noremap J 5j
+noremap K 5k
+noremap L 5L
 
 call plug#begin('~/.vim/plugged')
                                         
@@ -68,6 +74,7 @@ Plug 'scrooloose/nerdtree'
 call plug#end()
 
 "colorscheme snazzy
+colorscheme monokai 
 "let g:SnazzyTransparent = 1 
 
 " use <tab> for trigger completion and navigate to the next complete item
